@@ -1,0 +1,1040 @@
+PROJECT: HIRENEXA AI
+
+AI-Powered Intelligent Recruitment and Interview Platform
+
+1. Project Overview
+
+Build a complete, modern, full-stack web application named HireNexa AI, an AI-powered recruitment platform designed to automate and streamline the hiring and interview process.
+
+The platform should allow companies and recruiters to create job openings, configure interview rounds, invite candidates through secure interview links, conduct AI-powered voice and video interviews using an interactive talking avatar, analyze candidate responses, and generate detailed interview reports.
+
+The system must support three user roles:
+
+1. Super Admin
+2. Recruiter
+3. Candidate
+
+Develop HireNexa AI as a professional, scalable, secure, and functional recruitment product rather than a static UI demo.
+
+Important: All major features must work end-to-end. Buttons, forms, dashboards, authentication, interview sessions, report generation, and database operations must be connected to their actual functionality.
+
+---
+
+2. Landing Page and Branding
+
+Create a premium, modern landing page for HireNexa AI.
+
+Design Requirements
+
+- Professional AI recruitment SaaS design.
+- Dark navy, deep purple, and electric blue gradient theme.
+- Glassmorphism cards and subtle glowing effects.
+- Smooth animations and transitions.
+- Modern typography and responsive layouts.
+- Clean dashboard previews and AI avatar illustrations.
+- Floating AI elements and subtle background animations.
+- Professional, accessible interface on desktop, tablet, and mobile.
+
+Landing Page Sections
+
+1. Navigation bar with HireNexa AI logo.
+2. Hero section with the headline:
+   "Transform Recruitment with Intelligent AI Interviews."
+3. Supporting description explaining AI-powered recruitment automation.
+4. Get Started, Login, and Sign Up buttons.
+5. How It Works section.
+6. Features section.
+7. Interview Process section.
+8. Benefits for recruiters and organizations.
+9. Analytics and reporting preview.
+10. Frequently Asked Questions.
+11. Footer with contact, privacy policy, terms, and support links.
+
+The Get Started button should direct users to the appropriate authentication or role-based entry flow.
+
+Candidates accessing a valid interview invitation should be able to enter their interview directly through their secure invitation link.
+
+---
+
+3. User Roles and Authentication
+
+Implement secure, role-based authentication and authorization.
+
+A. Super Admin
+
+The Super Admin manages the overall platform.
+
+Required capabilities:
+
+- Secure login.
+- Super Admin dashboard.
+- Create, activate, deactivate, and manage recruiter accounts.
+- View recruiter profiles and account status.
+- Assign organizations or companies to recruiters where applicable.
+- Manage platform-wide settings.
+- Configure interview limits and supported interview configurations.
+- View platform-wide analytics.
+- Monitor recruitment activity.
+- View system usage and interview statistics.
+- Manage platform-level permissions.
+- Review system errors and operational logs.
+- Manage account security and access permissions.
+
+Only authorized Super Admins should have access to these controls.
+
+Public Super Admin registration must not be available. The initial Super Admin account must be created through a secure administrative setup process.
+
+B. Recruiter
+
+Recruiters manage recruitment activities for their assigned organization.
+
+Required capabilities:
+
+- Secure login.
+- Recruiter dashboard.
+- Create and manage job openings.
+- Configure job descriptions and required skills.
+- Select the interview process: 5 rounds or 8 rounds.
+- Configure AI interviewer settings.
+- Generate secure candidate interview links.
+- View candidate applications and interview progress.
+- Monitor interview completion status.
+- Access interview transcripts and recordings when enabled and consented to.
+- Review AI-generated interview reports.
+- Compare candidates using job-relevant assessment criteria.
+- Mark candidates as Shortlisted, On Hold, Rejected, or Selected.
+- Manage candidate records.
+- View job-wise and candidate-wise analytics.
+- Export authorized interview reports.
+
+Recruiters must only access the candidates, jobs, reports, and organization data they are authorized to manage.
+
+C. Candidate
+
+Candidates do not need a recruiter or Super Admin account.
+
+A candidate should enter the interview using a secure invitation link generated for a specific job opening.
+
+Required capabilities:
+
+- Open the invitation link.
+- View job details and interview instructions.
+- Read the privacy notice and provide required consent.
+- Upload a resume in PDF or supported document format.
+- Review detected resume information.
+- Verify their name, email, and other required details.
+- Complete microphone and camera checks.
+- Test their internet connection and audio input.
+- Start the interview.
+- Communicate with the AI interviewer through voice and video.
+- View the current interview round and progress.
+- Receive appropriate error messages and recovery options.
+- Submit the completed interview.
+- Receive a confirmation that their interview was submitted.
+
+Candidates must not access recruiter dashboards, internal hiring decisions, other candidates' data, or confidential evaluation notes.
+
+---
+
+4. Recruiter Dashboard
+
+Create a comprehensive recruiter dashboard with a consistent sidebar and navigation.
+
+Dashboard Navigation
+
+- Overview
+- Job Openings
+- Create Interview
+- Candidates
+- Interview Sessions
+- Interview Reports
+- Analytics
+- Settings
+
+Overview Dashboard
+
+Display:
+
+- Total job openings.
+- Active job openings.
+- Total invited candidates.
+- Interviews scheduled.
+- Interviews completed.
+- Interviews in progress.
+- Candidates shortlisted.
+- Candidates on hold.
+- Candidates rejected.
+- Average interview scores.
+- Interview completion rate.
+
+Use interactive charts and cards to display recruitment statistics.
+
+Provide filters by date, job role, interview status, and hiring stage.
+
+All dashboard values must come from actual database records rather than hardcoded statistics.
+
+---
+
+5. Job Creation and Interview Configuration
+
+When a recruiter creates a new job opening, provide a structured form.
+
+Job Details
+
+- Job title.
+- Department.
+- Organization.
+- Job description.
+- Required skills.
+- Preferred qualifications.
+- Minimum experience.
+- Employment type.
+- Work location.
+- Number of openings.
+- Required assessment criteria.
+- Interview instructions.
+- Application deadline.
+
+Interview Configuration
+
+The recruiter must choose one of two interview structures:
+
+Option A: Standard Interview — 5 Rounds
+
+Option B: Comprehensive Interview — 8 Rounds
+
+The recruiter must be able to preview the selected process before publishing the job.
+
+Allow authorized recruiters to customize round-specific questions, assessment criteria, time limits, and supported interview formats.
+
+The selected interview structure must be saved with the job opening and assigned to each candidate invited for that job.
+
+Generate a unique, cryptographically secure candidate invitation token for each invitation.
+
+The invitation must be associated with the correct candidate, job opening, and interview configuration.
+
+Support token expiration, revocation, and single-session or controlled re-entry policies.
+
+---
+
+6. Standard Interview Process — 5 Rounds
+
+Implement the following configurable interview workflow.
+
+Round 1: Resume Screening
+
+The candidate uploads their resume.
+
+The AI-powered resume analysis module should:
+
+- Extract relevant information from the resume.
+- Identify skills, qualifications, education, and experience.
+- Identify relevant projects and certifications.
+- Compare extracted information with the job description.
+- Calculate a job-relevance score.
+- Identify matching and missing required skills.
+- Generate a concise resume summary.
+
+Display the extracted information to the recruiter for review.
+
+Do not automatically reject candidates solely because of an AI-generated resume score.
+
+The recruiter must be able to review the result and configure the criteria for progression.
+
+Round 2: HR Screening
+
+The AI interviewer asks questions about:
+
+- Candidate introduction.
+- Educational background.
+- Relevant experience.
+- Interest in the position.
+- Communication and explanation skills.
+- Availability and expected joining date.
+- Salary expectations, when relevant to the role.
+
+Questions should be appropriate to the job level and candidate profile.
+
+The AI should ask relevant follow-up questions based on candidate responses.
+
+Round 3: Technical Interview
+
+Evaluate job-specific technical knowledge.
+
+Depending on the role, questions may cover:
+
+- Programming fundamentals.
+- Data structures and algorithms.
+- Database concepts.
+- Web development.
+- Frameworks and technologies.
+- Software engineering fundamentals.
+- Domain-specific technical knowledge.
+
+For non-technical positions, replace technical questions with role-specific competency questions.
+
+Round 4: Managerial Interview
+
+Assess job-relevant competencies through behavioral and situational questions.
+
+Topics may include:
+
+- Teamwork.
+- Collaboration.
+- Conflict resolution.
+- Problem-solving.
+- Leadership, when relevant.
+- Decision-making.
+- Time management.
+- Handling work-related challenges.
+
+Use realistic workplace scenarios and evaluate the candidate's reasoning and proposed solutions.
+
+Round 5: Final HR Round
+
+Ask relevant questions about:
+
+- Career goals.
+- Motivation for the role.
+- Job expectations.
+- Work preferences.
+- Availability.
+- Compensation expectations, where applicable.
+- Questions the candidate has about the position.
+
+The AI should summarize the candidate's responses and provide a structured evaluation for recruiter review.
+
+Actual salary negotiation, offer approval, and employment contract execution remain under authorized human control.
+
+---
+
+7. Comprehensive Interview Process — 8 Rounds
+
+When the recruiter selects the 8-round option, use the following workflow.
+
+Round 1: Resume Screening
+
+Analyze the uploaded resume against the job description.
+
+Extract:
+
+- Education.
+- Skills.
+- Experience.
+- Projects.
+- Certifications.
+- Relevant achievements.
+
+Generate a resume summary, skill-match analysis, and missing-requirement report.
+
+Round 2: HR Telephonic Screening
+
+Conduct a voice-based screening interview covering:
+
+- Introduction.
+- Experience.
+- Job interest.
+- Communication and explanation.
+- Availability.
+- Salary expectations, where relevant.
+
+The interview should be voice-based even when the candidate completes it through a web browser.
+
+Round 3: Aptitude and Online Assessment
+
+Generate a job-appropriate assessment containing selected question categories:
+
+- Logical reasoning.
+- Numerical aptitude.
+- Verbal reasoning.
+- Analytical thinking.
+- Basic programming, where relevant.
+
+Support:
+
+- Multiple-choice questions.
+- Coding questions where applicable.
+- Configurable time limits.
+- Automatic answer evaluation where reliable.
+- Assessment scores and explanations for authorized reviewers.
+
+The system must store candidate answers and assessment results.
+
+Do not present an aptitude assessment as completed unless the candidate actually submits it.
+
+Round 4: Technical Screening
+
+Conduct an initial technical interview covering:
+
+- Resume-based questions.
+- Fundamental technical concepts.
+- Short programming questions, where appropriate.
+- Basic problem-solving.
+- Job-specific knowledge.
+
+Generate follow-up questions based on the candidate's answers.
+
+Round 5: In-Depth Technical Interview
+
+Conduct a deeper technical evaluation appropriate to the position.
+
+Possible topics:
+
+- Data structures and algorithms.
+- Object-oriented programming.
+- Databases.
+- Software architecture.
+- System design for suitable positions.
+- Frameworks and libraries.
+- Project architecture and implementation decisions.
+- Debugging and problem-solving.
+- Domain-specific technical knowledge.
+
+Support text-based coding assessments where needed.
+
+Do not claim to execute or test code unless a secure code-execution environment is actually integrated.
+
+Round 6: Managerial Round
+
+Evaluate:
+
+- Team collaboration.
+- Leadership when relevant.
+- Handling challenging situations.
+- Prioritization.
+- Conflict resolution.
+- Decision-making.
+- Project ownership.
+- Communication in workplace scenarios.
+
+Ask situational questions and request explanations of the candidate's reasoning.
+
+Round 7: HR Behavioral Round
+
+Evaluate job-relevant behavioral competencies through structured questions about:
+
+- Professional values.
+- Work preferences.
+- Motivation.
+- Career goals.
+- Ethical decision-making.
+- Adaptability.
+- Collaboration.
+- Alignment with clearly defined organizational working principles.
+
+Avoid subjective judgments about protected characteristics, personality stereotypes, appearance, accent, or other irrelevant personal attributes.
+
+Round 8: Final HR and Offer Discussion
+
+Discuss:
+
+- Role expectations.
+- Candidate questions.
+- Availability and potential joining date.
+- Compensation expectations.
+- Relevant employment conditions.
+- Next steps in the hiring process.
+
+Generate a summary for the recruiter.
+
+The AI must not independently make binding job offers, negotiate contractual terms on behalf of the company, or claim that the candidate has been hired without human authorization.
+
+---
+
+8. AI Interviewer and Talking Avatar
+
+Build an interactive AI interviewer that can conduct natural, voice-based interviews through a talking avatar.
+
+Avatar Interface
+
+Display:
+
+- AI avatar.
+- Interviewer's spoken questions.
+- Candidate microphone status.
+- Camera status.
+- Audio visualization.
+- Current round.
+- Question progress.
+- Interview timer.
+- Connection status.
+- End Interview button.
+
+Voice Interview Workflow
+
+1. Load the configured AI interviewer.
+2. Display the interview instructions.
+3. Request necessary camera and microphone permissions.
+4. Verify audio input and output.
+5. Start the interview after the candidate confirms readiness.
+6. Generate or retrieve the next relevant question.
+7. Convert the question into speech.
+8. Animate the avatar to accompany the spoken question.
+9. Capture the candidate's spoken response.
+10. Convert the response into text using speech recognition.
+11. Evaluate the response against the question's assessment criteria.
+12. Generate a relevant follow-up question when appropriate.
+13. Save the question, response transcript, evaluation, and timestamps.
+14. Continue through the configured interview rounds.
+15. Generate the final report after the interview is completed.
+
+Important AI Requirements
+
+The interviewer must:
+
+- Maintain interview context.
+- Ask questions relevant to the job.
+- Avoid repeatedly asking identical questions.
+- Adjust question difficulty within recruiter-defined limits.
+- Ask clarification questions when responses are unclear.
+- Handle silence and interruptions appropriately.
+- Inform the candidate when audio cannot be understood.
+- Allow a reasonable response period.
+- Avoid generating unrelated or discriminatory questions.
+- Respect the selected interview structure.
+
+Technical implementation requirement: Do not simulate a fully working AI avatar with a static image and fake voice controls. Integrate real speech-to-text, text-to-speech, conversational AI, and a supported avatar or animation system.
+
+If a third-party avatar API is required, isolate it behind a service interface so the provider can be configured using environment variables.
+
+If no avatar provider is configured, provide a clearly labeled fallback interface using a visual avatar, real speech recognition, and spoken AI responses where supported. Do not claim that unavailable video-avatar functionality is operational.
+
+---
+
+9. AI Services and Integration Architecture
+
+Design the AI integration as modular services.
+
+Required services:
+
+1. Resume Parsing Service.
+2. Resume-to-Job Matching Service.
+3. Interview Question Generation Service.
+4. Conversational Interview Service.
+5. Speech-to-Text Service.
+6. Text-to-Speech Service.
+7. Avatar Animation or Video Service.
+8. Answer Evaluation Service.
+9. Interview Report Generation Service.
+10. Analytics Service.
+
+Use a configurable AI provider rather than hardcoding provider-specific logic throughout the application.
+
+Support environment variables for API keys and provider configuration.
+
+All API keys must remain on the server. Never expose secret credentials in client-side JavaScript, frontend environment variables intended for public exposure, or source control.
+
+Implement:
+
+- Request validation.
+- Rate limiting.
+- API error handling.
+- Retry policies where appropriate.
+- Usage logging.
+- Timeouts.
+- Graceful failure handling.
+
+Do not invent AI responses, assessment results, transcripts, or completed interviews when an API request fails.
+
+---
+
+10. Candidate Interview Page
+
+Create a dedicated, distraction-free interview page.
+
+Before the Interview
+
+Display:
+
+- Job title.
+- Company or organization name.
+- Interview format.
+- Selected interview rounds.
+- Estimated duration.
+- Instructions.
+- Privacy notice.
+- Consent requirements.
+- Resume upload.
+- Candidate information verification.
+- Microphone and camera checks.
+
+During the Interview
+
+Display:
+
+- AI avatar.
+- Current question.
+- Current round.
+- Question progress.
+- Microphone controls.
+- Camera controls.
+- Audio status.
+- Connection status.
+- Time remaining, where applicable.
+
+Allow candidates to report technical problems and retry failed audio operations.
+
+Provide appropriate accessibility options.
+
+Interview Completion
+
+After all configured rounds have been completed:
+
+- Save final responses.
+- Mark the interview as completed.
+- Generate the report.
+- Show a confirmation page.
+- Notify the recruiter that the report is ready.
+
+If a candidate exits early, save the session as incomplete or interrupted and allow the configured recovery policy to determine whether the candidate can resume.
+
+---
+
+11. Interview Report Page
+
+Automatically generate a detailed report after a completed interview.
+
+Report Sections
+
+1. Candidate Information.
+2. Job Details.
+3. Resume Summary.
+4. Resume-to-Job Match.
+5. Interview Overview.
+6. Round-by-Round Results.
+7. Questions Asked.
+8. Candidate Answers.
+9. Interview Transcript.
+10. Skill-Wise Assessment.
+11. Technical Knowledge Assessment, where relevant.
+12. Problem-Solving Assessment.
+13. Communication Clarity Assessment.
+14. Role-Specific Competency Assessment.
+15. Strengths.
+16. Areas for Improvement.
+17. Missing or Unverified Skills.
+18. Overall Assessment Summary.
+19. AI-Generated Recommendation.
+20. Recruiter Decision and Notes.
+
+Scoring
+
+Use configurable, job-relevant assessment criteria.
+
+Each criterion should have:
+
+- Criterion name.
+- Description.
+- Maximum score.
+- Obtained score.
+- Evidence from candidate responses.
+- Evaluation notes.
+
+Calculate overall scores using documented weights and normalized scoring.
+
+Do not fabricate numerical scores when insufficient evidence is available.
+
+The report must distinguish:
+
+- Resume-derived information.
+- Candidate-provided information.
+- Automatically evaluated responses.
+- Human recruiter decisions.
+
+Recruiter Decision Options
+
+- Shortlist.
+- On Hold.
+- Reject.
+- Select.
+
+Require appropriate confirmation before changing a candidate's status.
+
+Allow recruiters to add notes and record decision timestamps.
+
+AI recommendations must support human decision-making rather than automatically determine employment outcomes.
+
+Report Export
+
+Support downloading authorized reports as PDF.
+
+Allow CSV export for appropriate structured recruitment data.
+
+Apply access controls to all exported files.
+
+---
+
+12. Candidate Management
+
+Create a dedicated candidate management section.
+
+Display:
+
+- Candidate name.
+- Email.
+- Job applied for.
+- Resume status.
+- Interview structure.
+- Current interview round.
+- Interview status.
+- Completion date.
+- Resume-match score.
+- Interview score, when available.
+- Recruiter decision.
+- Last activity.
+Filters
+Support filtering by:
+Job opening.
+Interview status.
+Round.
+Completion date.
+Recruiter decision.
+Relevant skill criteria.
+Candidate Statuses
+Invited.
+Not Started.
+In Progress.
+Interrupted.
+Completed.
+Report Pending.
+Shortlisted.
+On Hold.
+Rejected.
+Selected.
+Prevent invalid status transitions.
+Maintain an auditable record of status changes.
+13. Analytics Dashboard
+Create separate analytics views for Super Admins and Recruiters.
+Super Admin Analytics
+Display:
+Total recruiters.
+Active recruiter accounts.
+Total organizations, where organization management is enabled.
+Total job openings.
+Total candidates invited.
+Total completed interviews.
+Total interviews in progress.
+Platform-wide completion rate.
+Average interview score.
+Interview abandonment rate.
+API usage and estimated service consumption.
+Usage trends over time.
+Recruiter Analytics
+Display:
+Job-wise candidate distribution.
+Candidates at each recruitment stage.
+Completed versus incomplete interviews.
+Average scores by job role.
+Round-wise performance.
+Interview completion rate.
+Interview drop-off rate.
+Time taken to complete interviews.
+Shortlisted candidates.
+Selected candidates.
+Candidate comparison reports.
+Use interactive charts and date filters.
+Clearly define every metric.
+For example:
+Completion Rate = Completed Interviews / Started Interviews × 100
+Drop-off Rate = Started Interviews Not Completed / Started Interviews × 100
+Do not classify invited candidates who never started an interview as interview drop-offs unless the metric explicitly measures invitation-to-start conversion.
+All analytics must be calculated from actual stored records.
+14. Database Architecture
+Use a structured database design that supports secure, scalable recruitment workflows.
+Suggested entities or collections:
+Users.
+Organizations.
+RecruiterProfiles.
+JobOpenings.
+JobRequirements.
+Candidates.
+CandidateInvitations.
+Resumes.
+InterviewConfigurations.
+InterviewSessions.
+InterviewRounds.
+InterviewQuestions.
+CandidateResponses.
+AssessmentResults.
+InterviewTranscripts.
+InterviewReports.
+RecruiterDecisions.
+AuditLogs.
+PlatformSettings.
+UsageRecords.
+Create appropriate relationships, indexes, validation rules, and timestamps.
+Every interview session must be associated with:
+A specific candidate.
+A specific job opening.
+An authorized recruiter or organization.
+The selected interview configuration.
+Enforce tenant isolation so one organization cannot access another organization's private recruitment data.
+Implement database migrations or a reliable initialization process.
+Do not store all candidates and interviews in a single unprotected public collection.
+Use pagination for large datasets.
+Store large recordings and uploaded documents in secure object storage where appropriate, rather than directly in database documents.
+15. Security, Privacy, and Data Protection
+Implement security throughout the platform.
+Required controls:
+Secure password hashing.
+Server-side role-based authorization.
+Protected API endpoints.
+Secure session or token management.
+Rate limiting.
+Input validation.
+File type and file size validation.
+Secure file storage.
+Expiring invitation links.
+Access-controlled report downloads.
+Audit logging.
+Environment-based secrets.
+Protection against unauthorized cross-tenant access.
+Appropriate retention and deletion policies.
+For candidate interviews:
+Obtain consent before recording audio or video.
+Explain the intended use of AI and candidate data.
+Provide a privacy notice.
+Avoid recording when recording has not been authorized.
+Restrict access to recordings and transcripts.
+Support deletion or retention requests according to applicable policy.
+Do not use protected characteristics to score candidates.
+Do not infer personality, honesty, intelligence, or job suitability from facial appearance, accent, emotion recognition, or other unreliable biometric proxies.
+Use job-related evidence and structured assessment criteria.
+Provide a human review mechanism for consequential hiring decisions.
+16. Notifications
+Implement a notification system for important events.
+Examples:
+Candidate invitation created.
+Candidate invitation delivered.
+Interview started.
+Interview interrupted.
+Interview completed.
+Interview report generated.
+Candidate shortlisted.
+Candidate selected or rejected.
+Recruiter account created.
+Support email notifications through a configurable email service.
+Store notification status and relevant timestamps.
+Do not claim that an email was delivered unless the configured service confirms the relevant delivery status.
+17. Recommended Technology Stack
+Use the following stack unless an existing project requires a compatible alternative.
+Frontend
+React.
+TypeScript.
+Vite.
+Tailwind CSS.
+A suitable component library.
+React Router.
+Recharts for analytics.
+A lightweight animation library.
+Backend
+Node.js.
+Express.js.
+TypeScript.
+REST APIs.
+Database
+MongoDB.
+Mongoose.
+AI Integration
+Configurable LLM API.
+Speech-to-text provider.
+Text-to-speech provider.
+Avatar or animation provider.
+Resume parsing and document processing.
+Authentication and Security
+Secure password hashing.
+Server-side authorization middleware.
+Secure cookie-based sessions or a properly implemented token strategy.
+Environment variables.
+Rate limiting and request validation.
+Deployment
+Vercel or another suitable frontend hosting provider.
+A compatible backend hosting service.
+MongoDB Atlas or another supported database provider.
+Secure object storage for resumes and recordings.
+Ensure that the selected hosting architecture supports the application's backend requirements, file processing, AI API calls, and interview session duration.
+Do not assume that deploying the frontend automatically deploys the backend or connects the database.
+18. UI/UX Requirements
+The entire application must follow one consistent design system.
+Design Characteristics
+Premium SaaS interface.
+Dark navy and purple gradient backgrounds.
+Electric blue accents.
+Glass-effect cards.
+Subtle shadows.
+Smooth transitions.
+Consistent spacing.
+Modern tables.
+Clear status badges.
+Professional charts.
+Accessible forms.
+Responsive dashboards.
+Loading indicators.
+Skeleton loaders where appropriate.
+Helpful empty states.
+Confirmation dialogs.
+Error notifications.
+Success notifications.
+The landing page, authentication pages, recruiter dashboard, Super Admin dashboard, candidate interview page, and report pages must all feel like parts of the same product.
+Avoid unfinished pages, placeholder links, inconsistent styling, or non-functional controls.
+19. Implementation Workflow
+Develop the project in the following order.
+Phase 1: Foundation
+Set up the application structure.
+Configure frontend and backend.
+Connect the database.
+Implement authentication.
+Implement role-based authorization.
+Establish the design system.
+Phase 2: Admin and Recruiter
+Build the Super Admin dashboard.
+Implement recruiter account management.
+Build recruiter dashboards.
+Implement job creation.
+Implement interview configuration.
+Add 5-round and 8-round workflows.
+Phase 3: Candidate Workflow
+Implement secure invitations.
+Build candidate information verification.
+Implement resume upload and parsing.
+Add interview readiness checks.
+Build interview session management.
+Phase 4: AI Interview
+Integrate conversational AI.
+Integrate speech recognition.
+Integrate text-to-speech.
+Integrate the avatar provider.
+Implement dynamic questions and follow-ups.
+Save transcripts and assessment results.
+Phase 5: Reports and Analytics
+Generate interview reports.
+Implement recruiter decisions.
+Add PDF and CSV exports.
+Build analytics dashboards.
+Add filters and drill-downs.
+Phase 6: Security and Testing
+Test authentication and authorization.
+Test tenant isolation.
+Test file uploads.
+Test interview links.
+Test both interview configurations.
+Test interruptions and recovery.
+Test report generation.
+Test analytics calculations.
+Test responsive design.
+Test API failures and recovery.
+Fix bugs before deployment.
+20. Testing Requirements
+Verify the following end-to-end workflows.
+Workflow A: Super Admin
+Super Admin logs in.
+Creates a recruiter account.
+Assigns the recruiter to the appropriate organization.
+Views the recruiter's status.
+Checks platform analytics.
+Workflow B: Recruiter
+Recruiter logs in.
+Creates a job opening.
+Selects the 5-round or 8-round interview process.
+Configures job requirements and assessment criteria.
+Creates a candidate invitation.
+Shares the secure invitation link.
+Monitors the candidate's progress.
+Reviews the generated interview report.
+Records a hiring decision.
+Checks recruitment analytics.
+Workflow C: Candidate
+Candidate opens the invitation link.
+Reviews the job details and privacy notice.
+Uploads a resume.
+Verifies their information.
+Tests the microphone and camera.
+Starts the interview.
+Completes the configured assessment and interview rounds.
+Submits the interview.
+Receives a completion confirmation.
+Workflow D: Reporting
+The system retrieves the saved interview responses.
+Generates an evidence-based report.
+Calculates scores using the configured criteria.
+Displays the transcript and round-wise assessments.
+Allows the authorized recruiter to review the report.
+Saves the recruiter decision.
+Updates the dashboard analytics.
+Test unsuccessful API calls, expired invitations, interrupted interviews, invalid uploads, unauthorized access, and database errors.
+21. Important Development Rules
+Follow these rules throughout implementation.
+Build functional features, not just visual mockups.
+Do not hardcode dashboard statistics.
+Do not create fake completed interviews.
+Do not invent transcripts or scores.
+Do not use placeholder authentication in production.
+Do not expose API keys.
+Do not allow candidates to access recruiter reports.
+Do not allow recruiters to access unauthorized organizations.
+Do not automatically make final hiring decisions.
+Do not pretend that unavailable third-party integrations are working.
+Use reusable components and modular services.
+Maintain consistent naming and code organization.
+Validate all inputs on both frontend and backend.
+Handle errors gracefully.
+Preserve working features when making updates.
+Fix root causes rather than adding superficial workarounds.
+Document all required environment variables.
+Provide clear setup and deployment instructions.
+Test every major workflow before declaring it complete.
+Do not replace working project code unnecessarily.
+If a feature requires an external API key, identify the required provider, document the environment variable, and provide a clear configuration process.
+If a service is not configured, show an accurate setup message rather than a fake success state.
+22. Final Deliverable
+Deliver a complete, maintainable, deployable application named HireNexa AI.
+The finished product must include:
+A professional landing page.
+Secure authentication.
+Super Admin dashboard.
+Recruiter dashboard.
+Candidate interview portal.
+Job creation and interview configuration.
+Configurable 5-round interviews.
+Configurable 8-round interviews.
+AI-powered resume analysis.
+Voice-based AI interviews.
+Talking-avatar integration.
+Dynamic follow-up questions.
+Aptitude and technical assessments.
+Interview transcripts.
+Evidence-based interview reports.
+Recruiter decision management.
+Interactive analytics.
+Secure candidate invitation links.
+Database integration.
+Notification integration.
+PDF and CSV exports.
+Responsive design.
+Error handling.
+Testing documentation.
+Environment configuration instructions.
+Deployment documentation.
+Final instruction: First inspect the existing project structure and identify the framework, current functionality, and missing components. If the project already exists, extend and improve it without unnecessarily rebuilding working features. Implement the application incrementally, verify each major workflow, and clearly distinguish completed functionality from features that still require external configuration.
+
+Additional Requirements: Free Resources, APIs & Configuration
+
+Before starting development, review the complete HireNexa AI requirements and identify everything needed to build and run the project.
+
+1. Free 3D AI Interviewer: Find and integrate the best suitable free or open-source 3D talking avatar with voice interaction, lip-sync animation, and real-time responses. Prefer free solutions without mandatory paid subscriptions.
+
+2. AI Integration: Identify the required AI, speech-to-text, text-to-speech, and avatar APIs. Prefer free-tier services and clearly mention their limitations.
+
+3. Database: Recommend a suitable free database, preferably MongoDB Atlas Free Tier or another appropriate free alternative.
+
+4. Storage & Hosting: Identify free or free-tier options for resume uploads, interview reports, backend hosting, and deployment.
+
+5. Configuration: Before implementing any feature that requires my credentials, API keys, database connection strings, account creation, or other configuration, ask me for the required details and explain how to obtain them.
+
+6. Environment Variables: Provide a complete ".env.example" file listing all required variables. Never expose secrets in frontend code or commit them to GitHub.
+
+7. Free Alternatives: If a feature requires a paid service, first suggest a practical free or open-source alternative and explain any limitations.
+
+8. Step-by-Step Setup: Ask me only for the information or configuration currently needed. Give simple, step-by-step instructions so I can provide it correctly.
+
+Important: First analyze all project requirements, then give me a concise checklist of required services, accounts, API keys, database settings, and configuration details. Ask me for the necessary information before implementing dependent features. Do not assume that an API, database, or service is already configured. Do not claim that any feature works until it has been implemented and tested.

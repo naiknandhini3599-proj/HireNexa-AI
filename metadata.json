@@ -1,0 +1,8 @@
+{
+  "name": "HireNexa AI",
+  "description": "AI-powered intelligent recruitment and interview platform with interactive talking avatar, configurable 5-round and 8-round interview pipelines, resume screening, and comprehensive reports.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
